@@ -1,0 +1,23 @@
+<!doctype html>
+<script>
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    if (!id) {
+      alert('id 파라미터가 누락되었습니다.');
+      return;
+    }
+    if (id.startsWith('test-')) {
+      alert('테스트용 회원입니다.');
+      return;
+    }
+    let url;
+    const pclassMatch = id.match(/^(student|parent|teacher)-(\d+)$/);
+    if (pclassMatch) {
+      url = `https://admin.privateclass.co.kr/#/${pclassMatch[1]}s/${pclassMatch[2]}/show`;
+    } else {
+      url = `https://admin.privatenote.co.kr/students/${id}`;
+    }
+    window.location.href = url;
+  })();
+</script>
