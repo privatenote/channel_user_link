@@ -14,9 +14,9 @@
     let url;
     const pclassMatch = id.match(/^(student|parent|teacher)-(\d+)$/);
     if (pclassMatch) {
-      url = `https://admin.privateclass.co.kr/#/${pclassMatch[1]}s/${pclassMatch[2]}/show`;
+      url = `https://admin.live.privatenote.co.kr/#/${pclassMatch[1]}s/${pclassMatch[2]}/show`;
     } else {
-      url = `https://admin.privatenote.co.kr/students/${id}`;
+      url = `https://admin.vod.privatenote.co.kr/students/${id}`;
     }
     window.location.href = url;
   })();
